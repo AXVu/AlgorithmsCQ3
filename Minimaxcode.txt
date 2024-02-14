@@ -1,0 +1,18 @@
+public static void miniMaxSum(List<Integer> arr) {
+        long sum = 0;
+        for (Integer n : arr) {
+            sum += n;
+        }
+        long min = -1;
+        long max = -1;
+        for (Integer n : arr) {
+            if (min > sum - n || min == -1) {
+                min = sum - n;
+            }
+            if (max < sum - n) {
+                max = sum - n;
+            }
+        }
+        System.out.printf("%d %d",min,max);
+
+    }

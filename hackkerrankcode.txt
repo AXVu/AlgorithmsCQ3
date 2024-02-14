@@ -1,0 +1,23 @@
+public static boolean hackerrankFind(String s, int r) {
+        if (s == "hackkerrank") {
+            return true;
+        } else if (s.length() <= 10) {
+            return false;
+        } else {
+            boolean a = hackerrankFind(s.substring(0,r) + s.substring(r+1), r);
+            boolean b = hackerrankFind(s, r+1);
+            if (a || b) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static String hackerrankInString(String s) {
+        if (hackerrankFind(s, 0)) {
+            return "YES";
+        } else {
+            return "NO";
+        }
+    }
